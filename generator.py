@@ -16,7 +16,7 @@ def generate_image():
     try:
         m = Chem.MolFromSmiles(nameToSmiles)
         fig = Draw.MolToFile(m,'images/' + origmolName + '.png')
-    except TypeError:
+    except ValueError:
         raise tkMessageBox.showinfo("Invalid Input", "The molecule that you are searching is not yet available in the library")
   
     
